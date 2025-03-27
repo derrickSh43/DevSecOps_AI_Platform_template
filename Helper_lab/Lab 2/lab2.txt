@@ -1,0 +1,136 @@
+Lab 2: Python Programming Fundamentals
+**Note**: Run with `-v ~/Desktop/labuser_home:/home/labuser` to save your work.
+
+### Task 1: Hello, World!
+- Write `hello.py`: `print("Hello, World!")`.
+- Run: `python3 hello.py`.
+- **Practice**: Add `print("Python is fun!")`.
+
+### Task 2: Variables with Strings
+- Write `greet.py`: `name = "Alex"; print("Hello, " + name + "!")`.
+- Run it.
+- **Practice**: Use your name.
+
+### Task 3: Numbers and Basic Math
+- Write `age.py`: `age = 15; future_age = age + 3; print("Age now:", age); print("Age in 3 years:", future_age)`.
+- Run it.
+- **Practice**: Subtract 2.
+
+### Task 4: User Input
+- Write `ask.py`: `name = input("What’s your name? "); print("Hi, " + name + "!")`.
+- Run it.
+- **Practice**: Ask for an animal.
+
+### Task 5: Numbers with Input
+- Write `calc.py`: `num = int(input("Enter a number: ")); double = num * 2; print("Double:", double)`.
+- Run it.
+- **Practice**: Multiply by 3.
+
+### Bonus: Quiz 1 - Basics
+- Write `quiz1.py` (see guide), run `python3 quiz1.py`, answer questions on Tasks 1-5.
+
+### Task 6: Introducing Data Types
+- Write `types.py`: `word = "Python"; number = 42; print(type(word)); print(type(number))`.
+- Run it.
+- **Practice**: Check an `input()` type.
+
+### Task 7: More Data Types
+- Write `more_types.py`: `height = 5.9; is_cool = True; print(type(height)); print(type(is_cool))`.
+- Run it.
+- **Practice**: Add a `False`.
+
+### Task 8: Lists - First Look
+- Write `list_intro.py`: `fruits = ["apple", "banana"]; fruits.append("orange"); print(fruits[0]); print(fruits)`.
+- Run it.
+- **Practice**: Add “grape”.
+
+### Task 9: Basic Conditionals
+- Write `age_check.py`: `age = int(input("Your age: ")); if age > 12: print("Teen or older!"); else: print("Kid!")`.
+- Run it.
+- **Practice**: Check < 20.
+
+### Task 10: Combining Input and Lists
+- Write `my_list.py`: `colors = []; color = input("Enter a color: "); colors.append(color); print(colors)`.
+- Run it.
+- **Practice**: Add two colors.
+
+### Task 11: For Loops with Lists
+- Write `loop_list.py`: `animals = ["cat", "dog", "bird"]; for animal in animals: print("I like:", animal)`.
+- Run it.
+- **Practice**: Add “fish”.
+
+### Task 12: While Loops
+- Write `keep_going.py`: `while True: answer = input("Type 'stop' to end: "); if answer == "stop": break; print("Going!")`.
+- Run it.
+- **Practice**: Stop on “quit”.
+
+### Task 13: Functions with Return
+- Write `math_func.py`: `def add(num): return num + 5; result = add(3); print("Result:", result)`.
+- Run it.
+- **Practice**: Subtract 2.
+
+### Task 14: Dictionaries - First Look
+- Write `dict_intro.py`: `person = {"name": "Zoe", "age": 25}; print(person["name"])`.
+- Run it.
+- **Practice**: Add “city”.
+
+### Task 15: Conditionals with Lists
+- Write `list_check.py`: `fruits = ["apple", "banana"]; if "apple" in fruits: print("Apple here!"); else: print("No apple!")`.
+- Run it.
+- **Practice**: Check “grape”.
+
+### Bonus: Quiz 2 - Data and Control
+- Write `quiz2.py` (see guide), run `python3 quiz2.py`, answer questions on Tasks 6-15.
+
+### Task 16: Building a Small List App
+- Write `tasks.py`: `tasks = []; task = input("Add a task: "); tasks.append(task); for t in tasks: print("Task:", t)`.
+- Run it.
+- **Practice**: Add two tasks.
+
+### Task 17: Sets for Unique Items
+- Write `unique.py`: `numbers = {1, 2, 2, 3}; print(numbers)`.
+- Run it.
+- **Practice**: Use colors.
+
+### Task 18: Tuples for Fixed Data
+- Write `fixed.py`: `point = (10, 20); print("X:", point[0])`.
+- Run it.
+- **Practice**: Use names.
+
+### Task 19: List Comprehension
+- Write `quick_list.py`: `odds = [x for x in range(6) if x % 2 == 1]; print(odds)`.
+- Run it.
+- **Practice**: Multiples of 3.
+
+### Task 20: File Writing
+- Write `save.py`: `with open("notes.txt", "w") as f: f.write("Python rules!\n")`.
+- Run it.
+- **Practice**: Write your name.
+
+### Task 21: File Reading
+- Write `load.py`: `with open("notes.txt", "r") as f: text = f.read(); print("File says:", text)`.
+- Run it.
+- **Practice**: Add a line.
+
+### Task 22: Task App with Saving
+- Update `tasks.py`: `tasks = []; task = input("Add a task: "); tasks.append(task); with open("tasks.txt", "w") as f: for t in tasks: f.write(t + "\n"); print("Saved!")`.
+- Run it.
+- **Practice**: Add two tasks.
+
+### Task 23: Modules - Random Fun
+- Write `dice.py`: `import random; roll = random.randint(1, 6); print("You rolled:", roll)`.
+- Run it.
+- **Practice**: Roll twice.
+
+### Task 24: Task App with Menu
+- Update `tasks.py`: `tasks = []; while True: print("1. Add Task  2. Exit"); choice = input("Choose: "); if choice == "1": task = input("Task: "); tasks.append(task); elif choice == "2": with open("tasks.txt", "w") as f: for t in tasks: f.write(t + "\n"); break`.
+- Run it.
+- **Practice**: Add and save.
+
+### Task 25: Final Task App
+- Update `tasks.py`: `tasks = []; with open("tasks.txt", "r") as f: tasks = f.read().splitlines(); while True: print("1. Add Task  2. List Tasks  3. Exit"); choice = input("Choose: "); if choice == "1": task = input("Task: "); tasks.append(task); elif choice == "2": for i, t in enumerate(tasks, 1): print(f"{i}. {t}"); elif choice == "3": with open("tasks.txt", "w") as f: for t in tasks: f.write(t + "\n"); break`.
+- Run it.
+- **Practice**: Add 3, list.
+
+### Bonus: Quiz 3 - Advanced Python
+- Write `quiz3.py` (see guide), run `python3 quiz3.py`, answer questions on Tasks 16-25.

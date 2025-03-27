@@ -1,0 +1,24 @@
+{
+    "quiz_id": "quiz3",
+    "title": "Advanced Python",
+    "questions": [
+      {
+        "id": 1,
+        "text": "What does a set do?",
+        "options": ["a) Orders items", "b) Removes duplicates", "c) Locks data"],
+        "correct": "b"
+      },
+      {
+        "id": 2,
+        "text": "What mode opens a file to read?",
+        "options": ["a) w", "b) r", "c) a"],
+        "correct": "b"
+      },
+      {
+        "id": 3,
+        "text": "What module gives random numbers?",
+        "options": ["a) math", "b) random", "c) time"],
+        "correct": "b"
+      }
+    ]
+  }

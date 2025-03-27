@@ -1,0 +1,44 @@
+name: Build & Deploy with GitOps
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Helper_lab/**'
+      - 'nlp-assistant/**'
+      - 'manifests/deployment.yaml'
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to DockerHub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Build & Push Helper Image
+        run: |
+          docker build -t derricksh43/kodklod-core:latest ./Helper_lab
+          docker push derricksh43/kodklod-core:latest
+
+      - name: Build & Push NLP Assistant Image
+        run: |
+          docker build -t derricksh43/hugging-fastapi:latest ./nlp-assistant
+          docker push derricksh43/hugging-fastapi:latest
+
+      - name: (Optional) Update Image Tags in Manifest
+        run: |
+          sed -i 's|image: derricksh43/kodklod-core:.*|image: derricksh43/kodklod-core:latest|' manifests/deployment.yaml
+          sed -i 's|image: derricksh43/hugging-fastapi:.*|image: derricksh43/hugging-fastapi:latest|' manifests/deployment.yaml
+
+      - name: Commit Updated Manifest
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "CI/CD: Update deployment manifest with latest images"
+          file_pattern: manifests/deployment.yaml

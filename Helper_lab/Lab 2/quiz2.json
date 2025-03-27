@@ -1,0 +1,24 @@
+{
+    "quiz_id": "quiz2",
+    "title": "Data and Control",
+    "questions": [
+      {
+        "id": 1,
+        "text": "What type is 3.14?",
+        "options": ["a) int", "b) float", "c) str"],
+        "correct": "b"
+      },
+      {
+        "id": 2,
+        "text": "How do you add to a list?",
+        "options": ["a) append()", "b) add()", "c) push()"],
+        "correct": "a"
+      },
+      {
+        "id": 3,
+        "text": "What stops a while loop?",
+        "options": ["a) break", "b) stop", "c) end"],
+        "correct": "a"
+      }
+    ]
+  }
