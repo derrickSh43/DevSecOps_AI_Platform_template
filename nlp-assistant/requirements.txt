@@ -1,0 +1,6 @@
+fastapi==0.103.0
+uvicorn[standard]==0.23.2
+transformers==4.38.2
+torch==2.2.1
+pydantic==2.5.0
+numpy<2  # Add this to pin NumPy below 2.0

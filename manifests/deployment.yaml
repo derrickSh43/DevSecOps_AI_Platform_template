@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nlp-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nlp-api
+  template:
+    metadata:
+      labels:
+        app: nlp-api
+    spec:
+      containers:
+      - name: backend
+        image: derricksh43/kodklod-core:latest
+        ports:
+        - containerPort: 80
+      - name: nlp-assistant
+        image: derricksh43/hugging-fastapi:latest
+        ports:
+        - containerPort: 8001

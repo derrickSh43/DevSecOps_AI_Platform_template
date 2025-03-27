@@ -1,0 +1,22 @@
+services:
+  lab1-app:
+    build:
+      context: ./Helper_lab
+    image: derricksh43/lab1-app:latest
+    ports:
+      - "8000:8000"
+#    command: uvicorn app:app --reload
+    environment:
+      - NLP_SERVICE_URL=http://nlp-assistant:8000
+    depends_on:
+      - nlp-assistant
+
+  nlp-assistant:
+    build:
+      context: ./nlp-assistant
+    image: derricksh43/project_1:latest
+    ports:
+      - "8001:8000"
+    environment:
+      - HF_TASK=question-answering
+      - HF_MODEL=distilbert-base-cased-distilled-squad

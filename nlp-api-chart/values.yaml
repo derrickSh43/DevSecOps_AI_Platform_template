@@ -1,0 +1,14 @@
+replicaCount: 1
+
+# Backend Image Configuration
+backendImage:
+  repository: derricksh43/kodklod-core:latest  # Replace with your backend image
+  tag: latest
+
+# NLP Assistant Image Configuration
+nlpAssistantImage:
+  repository: derricksh43/hugging-fastapi:latest  # Replace with your NLP assistant image
+  tag: latest
+
+service:
+  port: 80

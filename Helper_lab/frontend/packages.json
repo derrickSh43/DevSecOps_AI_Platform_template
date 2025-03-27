@@ -1,0 +1,18 @@
+{
+    "name": "devops-lab",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+      "react": "^18.3.1",
+      "react-dom": "^18.3.1"
+    },
+    "scripts": {
+      "start": "vite --host 0.0.0.0",
+      "build": "vite build",
+      "preview": "vite preview"
+    },
+    "devDependencies": {
+      "vite": "^4.5.10",
+      "@vitejs/plugin-react": "^4.0.0"
+    }
+  }
